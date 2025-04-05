@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">Memory Lane</div>
+        <div class="emergency-btn">
+            <button onclick="emergency()">Emergency Call</button>
+        </div>
+        <ul>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="voice-memos.html" id="voice-memos">Voice Memos</a></li>
+            <li><a href="todo.html" id="todo">To-Do List</a></li>
+            <li><a href="family.html" id="family">Family Info</a></li>
+            <li><a href="photos.html" id="photos">Photo Album</a></li>
+            <li><a href="location.html" id="location">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="dashboard">
+        <h1 id="title-welcome">Welcome to Memory Lane</h1>
+        <p class="welcome-text">Your personal companion for keeping memories and daily tasks organized.</p>
+        
+        <div class="dashboard-grid">
+            <a href="voice-memos.html" class="feature-card">
+                <i class="fas fa-microphone"></i>
+                <h3>Voice Memos</h3>
+                <p>Listen to messages from your loved ones</p>
+            </a>
+            
+            <a href="todo.html" class="feature-card">
+                <i class="fas fa-tasks"></i>
+                <h3>To-Do List</h3>
+                <p>Keep track of your daily tasks</p>
+            </a>
+            
+            <a href="family.html" class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Family Info</h3>
+                <p>Important information about your loved ones</p>
+            </a>
+            
+            <a href="photos.html" class="feature-card">
+                <i class="fas fa-images"></i>
+                <h3>Photo Album</h3>
+                <p>Browse through cherished memories</p>
+            </a>
+            
+            <a href="location.html" class="feature-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Find your way and important places</p>
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Memos - Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Memory Lane</div>
+        <div class="emergency-btn">
+            <button onclick="emergency()">Emergency Call</button>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="voice-memos.html" class="active">Voice Memos</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="family.html">Family Info</a></li>
+            <li><a href="photos.html">Photo Album</a></li>
+            <li><a href="location.html">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="voice-memos">
+        <h2>Voice Memos from Loved Ones</h2>
+        <div class="memo-container">
+            <div class="memo">
+                <span class="person">Sarah - Daughter:</span>
+                <button class="play-button" onclick="togglePlay(this, 'memo1')">&#9654;</button>
+                <div class="waveform" id="memo1">
+                    <!-- Waveform bars will be added by JavaScript -->
+                </div>
+                <div class="memo-info">
+                    <span class="duration">1:30</span>
+                    <span class="date">Today, 2:30 PM</span>
+                </div>
+            </div>
+            <div class="memo">
+                <span class="person">Michael - Son:</span>
+                <button class="play-button" onclick="togglePlay(this, 'memo2')">&#9654;</button>
+                <div class="waveform" id="memo2">
+                    <!-- Waveform bars will be added by JavaScript -->
+                </div>
+                <div class="memo-info">
+                    <span class="duration">0:45</span>
+                    <span class="date">Yesterday</span>
+                </div>
+            </div>
+            <div class="memo">
+                <span class="person">Emma - Grandchild:</span>
+                <button class="play-button" onclick="togglePlay(this, 'memo3')">&#9654;</button>
+                <div class="waveform" id="memo3">
+                    <!-- Waveform bars will be added by JavaScript -->
+                </div>
+                <div class="memo-info">
+                    <span class="duration">2:15</span>
+                    <span class="date">2 days ago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Create waveform bars
+        function createWaveform(waveformId) {
+            const waveform = document.getElementById(waveformId);
+            const barCount = 50;
+            
+            for (let i = 0; i < barCount; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'wave-bar';
+                bar.style.height = Math.floor(Math.random() * 20 + 10) + 'px';
+                bar.style.setProperty('--bar-index', i);
+                waveform.appendChild(bar);
+            }
+        }
+
+        // Initialize waveforms
+        createWaveform('memo1');
+        createWaveform('memo2');
+        createWaveform('memo3');
+
+        // Handle play/pause
+        function togglePlay(button, waveformId) {
+            const waveform = document.getElementById(waveformId);
+            
+            if (!button.classList.contains('playing')) {
+                // Stop all other playing memos
+                document.querySelectorAll('.waveform').forEach(w => w.classList.remove('playing'));
+                document.querySelectorAll('.play-button').forEach(btn => {
+                    btn.classList.remove('playing');
+                    btn.innerHTML = '&#9654;';
+                });
+                
+                // Play this memo
+                button.classList.add('playing');
+                button.innerHTML = '&#10074;&#10074;';
+                waveform.classList.add('playing');
+            } else {
+                // Pause this memo
+                button.classList.remove('playing');
+                button.innerHTML = '&#9654;';
+                waveform.classList.remove('playing');
+            }
+        }
+    </script>
+</body>
+</html> 

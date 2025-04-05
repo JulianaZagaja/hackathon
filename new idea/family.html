@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Information - Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Memory Lane</div>
+        <div class="emergency-btn">
+            <button onclick="emergency()">Emergency Call</button>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="voice-memos.html">Voice Memos</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="family.html" class="active">Family Info</a></li>
+            <li><a href="photos.html">Photo Album</a></li>
+            <li><a href="location.html">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="family">
+        <h2>Family Information</h2>
+        <div class="family-cards">
+            <div class="family-card">
+                <img src="https://cdn.pixabay.com/photo/2015/03/03/18/58/woman-657753_1280.jpg" alt="Sarah">
+                <h3 class="name">Sarah Johnson</h3>
+                <p class="relation">Daughter</p>
+                <div class="info-details">
+                    <p><i class="fas fa-birthday-cake"></i> June 15, 1985</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-home"></i> 123 Maple Street</p>
+                    <p><i class="fas fa-heart"></i> Favorite color: Purple</p>
+                </div>
+                <button class="call-btn" onclick="callFamily('5551234567')">
+                    <i class="fas fa-phone"></i> Call Sarah
+                </button>
+            </div>
+            <div class="family-card">
+                <img src="https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg" alt="Michael">
+                <h3 class="name">Michael Johnson</h3>
+                <p class="relation">Son</p>
+                <div class="info-details">
+                    <p><i class="fas fa-birthday-cake"></i> August 22, 1988</p>
+                    <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                    <p><i class="fas fa-home"></i> 456 Oak Avenue</p>
+                    <p><i class="fas fa-heart"></i> Favorite color: Blue</p>
+                </div>
+                <button class="call-btn" onclick="callFamily('5559876543')">
+                    <i class="fas fa-phone"></i> Call Michael
+                </button>
+            </div>
+            <div class="family-card">
+                <img src="https://thumbs.dreamstime.com/b/beautiful-little-lady-smiling-portrait-asian-girl-yellow-dress-looking-out-tree-wide-smile-her-face-cute-nature-124882822.jpg" alt="Emma">
+                <h3 class="name">Emma Johnson</h3>
+                <p class="relation">Granddaughter</p>
+                <div class="info-details">
+                    <p><i class="fas fa-birthday-cake"></i> March 3, 2015</p>
+                    <p><i class="fas fa-phone"></i> Contact through Sarah</p>
+                    <p><i class="fas fa-home"></i> Lives with Sarah</p>
+                    <p><i class="fas fa-heart"></i> Favorite color: Pink</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

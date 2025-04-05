@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <div class="welcome-container">
+        <h1 id="welcome-title">Welcome to Memory Lane</h1>
+        <p class="tagline">Your companion for cherishing memories and staying organized</p>
+        
+        <div class="login-section">
+            <div class="user-type-selection">
+                <button class="user-type-btn active" onclick="toggleUserType('patient')">I am a Patient</button>
+                <button class="user-type-btn" onclick="toggleUserType('caregiver')">I am a Caregiver</button>
+            </div>
+
+            <div id="caregiver-login" class="hidden">
+                <h3>Caregiver Login</h3>
+                <form id="login-form" onsubmit="return validateLogin(event)">
+                    <input type="password" id="caregiver-password" placeholder="Enter password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <div id="patient-info" class="feature-preview">
+                <h3>How Memory Lane Helps You</h3>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <i class="fas fa-microphone"></i>
+                        <h4>Voice Messages</h4>
+                        <p>Listen to loving messages from your family members anytime</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Daily Tasks</h4>
+                        <p>Never forget important tasks with friendly reminders</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Family Album</h4>
+                        <p>Keep your loved ones' information and photos close</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location Helper</h4>
+                        <p>Always know where you are and how to get home</p>
+                    </div>
+                </div>
+                <button class="enter-app-btn" onclick="location.href='dashboard.html'">Enter Memory Lane</button>
+            </div>
+        </div>
+
+        <div class="emergency-section">
+            <button onclick="emergency()" class="emergency-btn">Emergency Call</button>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function toggleUserType(type) {
+            const caregiverLogin = document.getElementById('caregiver-login');
+            const patientInfo = document.getElementById('patient-info');
+            const buttons = document.querySelectorAll('.user-type-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (type === 'caregiver') {
+                caregiverLogin.classList.remove('hidden');
+                patientInfo.classList.add('hidden');
+            } else {
+                caregiverLogin.classList.add('hidden');
+                patientInfo.classList.remove('hidden');
+            }
+        }
+
+        function validateLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('caregiver-password').value;
+            // In a real application, this would be properly hashed and validated
+            if (password === 'caregiver123') {
+                window.location.href = 'dashboard.html?mode=caregiver';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+            return false;
+        }
+
+        function emergency() {
+            alert('Calling emergency services...');
+            // In a real application, this would connect to emergency services
+        }
+    </script>
+</body>
+</html> 

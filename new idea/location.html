@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">Memory Lane</div>
+        <div class="emergency-btn">
+            <button onclick="emergency()">Emergency Call</button>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="voice-memos.html">Voice Memos</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="family.html">Family Info</a></li>
+            <li><a href="photos.html">Photo Album</a></li>
+            <li><a href="location.html" class="active">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="location">
+        <h2>Your Location</h2>
+        <div class="location-container">
+            <div class="fake-map">
+                <div class="map-grid"></div>
+                <div class="map-marker home">
+                    <div class="map-label">Home</div>
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="map-marker current">
+                    <div class="map-label">You are here</div>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+            <div class="important-places">
+                <h3>Important Places</h3>
+                <div class="place-list">
+                    <div class="place-item home">
+                        <i class="fas fa-home"></i>
+                        <div class="place-info">
+                            <h4>Home</h4>
+                            <p>123 Main Street</p>
+                            <p class="distance">Distance: 0.5 miles</p>
+                            <button onclick="showDirections('home')">Navigate Home</button>
+                        </div>
+                    </div>
+                    <div class="place-item hospital">
+                        <i class="fas fa-hospital"></i>
+                        <div class="place-info">
+                            <h4>City General Hospital</h4>
+                            <p>789 Health Avenue</p>
+                            <p class="distance">Distance: 1.2 miles</p>
+                            <button onclick="showDirections('hospital')">Get Directions</button>
+                        </div>
+                    </div>
+                    <div class="place-item pharmacy">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <div class="place-info">
+                            <h4>HealthCare Pharmacy</h4>
+                            <p>456 Medicine Road</p>
+                            <p class="distance">Distance: 0.8 miles</p>
+                            <button onclick="showDirections('pharmacy')">Get Directions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="current-location-info">
+                <h3>Current Location</h3>
+                <p id="current-address">You are near: Downtown Shopping Center</p>
+                <button onclick="refreshLocation()" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> Refresh Location
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function showDirections(place) {
+            alert(`Showing directions to ${place}...\nFollow the highlighted path on the map.`);
+        }
+
+        function refreshLocation() {
+            alert('Updating your location...');
+            // In a real app, this would update with actual GPS coordinates
+        }
+    </script>
+</body>
+</html> 

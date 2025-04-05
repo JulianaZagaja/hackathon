@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album - Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">Memory Lane</div>
+        <div class="emergency-btn">
+            <button onclick="emergency()">Emergency Call</button>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="voice-memos.html">Voice Memos</a></li>
+            <li><a href="todo.html">To-Do List</a></li>
+            <li><a href="family.html">Family Info</a></li>
+            <li><a href="photos.html" class="active">Photo Album</a></li>
+            <li><a href="location.html">Location</a></li>
+        </ul>
+    </nav>
+
+    <section id="photos">
+        <h2>Family Photo Album</h2>
+        <div class="album-controls">
+            <select id="album-filter">
+                <option value="all">All Photos</option>
+                <option value="recent">Recent Events</option>
+                <option value="family">Family Gatherings</option>
+                <option value="holidays">Holidays</option>
+            </select>
+        </div>
+        <div class="photo-grid">
+            <div class="photo-card">
+                <img src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltd7de2531ef9e7421/66707cbcf5dc643008b6c8d9/picnic-mothers-day-hero.jpg?q=70&width=3840&auto=webp" alt="Family Picnic">
+                <div class="photo-info">
+                    <p class="date">July 4, 2023</p>
+                    <p class="caption">Family Picnic at Central Park</p>
+                    <p class="people">With Sarah, Michael, and Emma</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://entail-assets.com/artzabox/fit-in/680x454/shutterstock_455965297-1632384933126.jpg" alt="Christmas Celebration">
+                <div class="photo-info">
+                    <p class="date">December 25, 2023</p>
+                    <p class="caption">Christmas Morning Gift Opening</p>
+                    <p class="people">Whole family gathering</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://familyfriendlytampabay.com/wp-content/uploads/2019/12/96908990_m-e1606604978422.jpg" alt="Birthday Party">
+                <div class="photo-info">
+                    <p class="date">March 3, 2024</p>
+                    <p class="caption">Emma's 9th Birthday Party</p>
+                    <p class="people">Emma blowing out candles</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://images.stockcake.com/public/b/3/9/b3965616-c872-4ea4-bdfe-bc3682a8a7b7_large/gardening-with-grandma-stockcake.jpg" alt="Garden Day">
+                <div class="photo-info">
+                    <p class="date">April 15, 2024</p>
+                    <p class="caption">Spring Garden Planting</p>
+                    <p class="people">With Sarah and Emma</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://images.stockcake.com/public/f/1/2/f12b60a0-0e79-4e85-9169-7ae14c602c66_large/baking-with-grandma-stockcake.jpg" alt="Baking Day">
+                <div class="photo-info">
+                    <p class="date">May 8, 2024</p>
+                    <p class="caption">Cookie Baking with Grand-daughter</p>
+                    <p class="people">Teaching Emma and Michael family recipes</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://media.istockphoto.com/id/657915048/photo/multi-generation-family-playing-a-board-game.jpg?s=612x612&w=0&k=20&c=vaWeSHLrFKADtQk-dRlNmIBeCBRYI6GK3QxHW8HDUSc=" alt="Family Game Night">
+                <div class="photo-info">
+                    <p class="date">May 20, 2024</p>
+                    <p class="caption">Weekly Family Game Night</p>
+                    <p class="people">Everyone enjoying board games and puzzles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
